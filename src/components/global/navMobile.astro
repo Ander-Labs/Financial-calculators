@@ -1,0 +1,39 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Link {
+  name: string;
+  href: string;
+  icon: string;
+}
+
+const NavLinks: Link[] = [
+  { name: "Home", href: "/", icon: "mdi:home" },
+  {
+    name: "Simple",
+    href: "/interes-simple",
+    icon: "mdi:calculator-variant-outline",
+  },
+  {
+    name: "Compuesto",
+    href: "/interes-compuesto",
+    icon: "mdi:calculator-variant-outline",
+  },
+];
+---
+
+<nav
+  class="gap-4 justify-around items-center h-14 bg-zinc-950 flex md:hidden px-4 sticky inset-x-0 bottom-0 border-t"
+>
+  {
+    NavLinks.map((link) => (
+      <a
+        href={link.href}
+        class="text-white hover:text-rose-600 flex flex-col justify-center items-center"
+      >
+        <Icon name={link.icon} class={"w-6 h-6"} />
+        {link.name}
+      </a>
+    ))
+  }
+</nav>

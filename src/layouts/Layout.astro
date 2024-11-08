@@ -1,21 +1,24 @@
 ---
-// import Footer from "@components/global/footer.astro";
-// import Header from "@components/global/header.astro";
-// import NavMobile from "@components/global/navMobile.astro";
+import Footer from "@components/global/footer.astro";
+import Header from "@components/global/header.astro";
+import NavMobile from "@components/global/navMobile.astro";
 import { ViewTransitions } from "astro:transitions";
+import { SEO } from "astro-seo";
 interface Props {
   title: string;
+  descripcion: string;
 }
 
-const { title } = Astro.props;
+const { title, descripcion } = Astro.props as Props;
 ---
 
-<script type="text/partytown"
+<script
+  type="text/partytown"
   async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2964007773702778"
   crossorigin="anonymous"></script>
 
-<script type="text/partytown"
+<script
   is:raw
   src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"
 ></script>
@@ -23,22 +26,48 @@ const { title } = Astro.props;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
     <!-- ads -->
     <meta name="google-adsense-account" content="ca-pub-2964007773702778" />
 
     <!-- ViewTransitions  -->
     <ViewTransitions />
+
+    <SEO
+      title={title}
+      description={descripcion}
+      openGraph={{
+        basic: {
+          title: "A Very Descriptive Title",
+          type: "A type.",
+          image: "https://avatars.githubusercontent.com/u/119770203?v=4",
+        },
+      }}
+      twitter={{
+        creator: "@Ander_Labs",
+      }}
+      extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        // extending the default meta tags
+        meta: [
+          {
+            name: "twitter:image",
+            content: "https://avatars.githubusercontent.com/u/119770203?v=4",
+          },
+          { name: "twitter:title", content: "Tinker Tailor Soldier Spy" },
+          { name: "twitter:description", content: "Agent" },
+        ],
+      }}
+    />
   </head>
   <body>
-    <!-- <Header /> -->
+    <Header />
     <slot />
-    <!-- <Footer />
-    <NavMobile /> -->
+    <Footer />
+    <NavMobile />
   </body>
 </html>
