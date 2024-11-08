@@ -9,7 +9,22 @@
   env = { };
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
-    extensions = [ "astro-build.astro-vscode"  "aaron-bond.better-comments" "bradlc.vscode-tailwindcss" "chamboug.js-auto-backticks" "esbenp.prettier-vscode" "formulahendry.auto-close-tag" "formulahendry.auto-rename-tag" "formulahendry.code-runner" "oderwat.indent-rainbow" "PKief.material-icon-theme" "shardulm94.trailing-spaces" "teabyii.ayu" "usernamehw.errorlens" "YoavBls.pretty-ts-errors"];
+    extensions = [
+      "astro-build.astro-vscode"
+      "aaron-bond.better-comments"
+      "bradlc.vscode-tailwindcss"
+      "chamboug.js-auto-backticks"
+      "esbenp.prettier-vscode"
+      "formulahendry.auto-close-tag"
+      "formulahendry.auto-rename-tag"
+      "formulahendry.code-runner"
+      "oderwat.indent-rainbow"
+      "PKief.material-icon-theme"
+      "shardulm94.trailing-spaces"
+      "teabyii.ayu"
+      "usernamehw.errorlens"
+      "YoavBls.pretty-ts-errors"
+    ];
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
