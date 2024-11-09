@@ -12,17 +12,6 @@ interface Props {
 const { title, descripcion } = Astro.props as Props;
 ---
 
-<script
-  type="text/partytown"
-  async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2964007773702778"
-  crossorigin="anonymous"></script>
-
-<script
-  is:raw
-  src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"
-></script>
-
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -63,6 +52,16 @@ const { title, descripcion } = Astro.props as Props;
         ],
       }}
     />
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"
+    ></script>
+    <script
+      is:inline
+      type="text/partytown"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2964007773702778"
+      crossorigin="anonymous"></script>
   </head>
   <body>
     <Header />
